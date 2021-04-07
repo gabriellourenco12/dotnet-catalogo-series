@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Cadastro_Series/1.0.0": {
+        "runtime": {
+          "Cadastro_Series.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Cadastro_Series/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
