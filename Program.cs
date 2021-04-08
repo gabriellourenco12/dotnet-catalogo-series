@@ -81,10 +81,21 @@ namespace Cadastro_Series
             Console.WriteLine("--- EXCLUIR SÉRIE ---");
             Console.WriteLine();
 			int indiceSerie = PegarId();
-            //Perguntar se quer excluir mesmo
+            Console.WriteLine("VOCÊ REALMENTE DESEJA FAZER ESSA SÉRIE MARCHAR NAS TERMÓPILAS? S OU N");
+            var resposta = Console.ReadLine();
 
-            repositorio.Exclui(indiceSerie);
-            //Confirmação de serie excluida
+            if (resposta.ToUpper() == "S" || resposta.ToUpper() == "SIM")
+            {
+                repositorio.Exclui(indiceSerie);
+                Console.WriteLine("SÉRIE DERROTADA EM BATALHA");
+                Console.WriteLine("PRESS F TO PAY RESPECTS");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("SÉRIE NÃO EXCLUÍDA");
+                Console.ReadKey();
+            }  
         }
 
         private static void AtualizarSerie()
