@@ -189,7 +189,7 @@ namespace Cadastro_Series
             Console.WriteLine("--- LISTA DE SÉRIES ---");
             Console.WriteLine();
 			var lista = repositorio.Lista();
-            if (b == true) lista = lista.OrderBy(a => a.Nota).ToList();
+            if (b == true) lista = lista.OrderByDescending(a => a.Nota).ToList();
 
 			if (lista.Count == 0)
 			{
@@ -218,10 +218,10 @@ namespace Cadastro_Series
 
 			Console.WriteLine("1- LISTAR TODAS AS SÉRIES");
             Console.WriteLine("2- SÉRIES MAIS VOTADAS");
-			Console.WriteLine("2- INSERIR NOVA SÉRIE");
-			Console.WriteLine("3- ATUALIZAR SÉRIE");
-			Console.WriteLine("4- EXCLUIR SÉRIE");
-			Console.WriteLine("5- VISUALIZAR SÉRIE");
+			Console.WriteLine("3- INSERIR NOVA SÉRIE");
+			Console.WriteLine("4- ATUALIZAR SÉRIE");
+			Console.WriteLine("5- EXCLUIR SÉRIE");
+			Console.WriteLine("6- VISUALIZAR SÉRIE");
 			Console.WriteLine("C- LIMPAR TELA");
             Console.WriteLine("F- TO PAY RESPECTS FOR KING LEONIDAS");
 			Console.WriteLine("X- THIS IS SPARTA (SAIR)");
