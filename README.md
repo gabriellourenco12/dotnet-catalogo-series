@@ -5,6 +5,7 @@ Essa é uma aplicação de um catálogo de séries que armazena as informações
 Ela permite ao usuário:
  - Inserir novas séries.
  - Listar todas séries.
+ - Listar séries mais votadas.
  - Atualizar alguma série.
  - Excluir alguma série.
  - Visualizar informações de uma série.
