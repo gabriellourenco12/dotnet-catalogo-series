@@ -15,18 +15,21 @@ namespace Cadastro_Series
 				switch (opcaoUsuario)
 				{
 					case "1":
-						ListarSeries();
+						ListarSeries(false);
 						break;
-					case "2":
-						InserirSerie();
+                    case "2":
+						ListarSeries(true);
 						break;
 					case "3":
-						AtualizarSerie();
+						InserirSerie();
 						break;
 					case "4":
-						ExcluirSerie();
+						AtualizarSerie();
 						break;
 					case "5":
+						ExcluirSerie();
+						break;
+					case "6":
 						VisualizarSerie();
 						break;
 					case "C":
@@ -161,18 +164,19 @@ namespace Cadastro_Series
                     Console.WriteLine("\nID INEXISTENTE!");
                     Console.WriteLine("PRESSIONE UMA TECLA PARA VISUALIZAR A LISTA DE SÉRIES");
                     Console.ReadKey();
-                    ListarSeries();                    
+                    ListarSeries(b);                    
                 }
             } while (b == false); 
             return index;  
         }
 
-        private static void ListarSeries()
+        private static void ListarSeries(bool b)
         {
             Console.Clear();
             Console.WriteLine("--- LISTA DE SÉRIES ---");
             Console.WriteLine();
 			var lista = repositorio.Lista();
+            if (b == true) lista = lista.OrderBy(a => a.Nota).ToList();
 
 			if (lista.Count == 0)
 			{
@@ -186,6 +190,7 @@ namespace Cadastro_Series
                 var excluido = serie.retornaExcluido();
 				Console.WriteLine("#ID {0}: - {1} {2}", serie.retornaId(), serie.retornaTitulo(), (excluido ? "(DEFEATED)":""));
                 Console.WriteLine("NOTA: {0}", serie.retornaNota());
+                Console.WriteLine();
 			}
             Console.WriteLine();
             Console.WriteLine("SPARTANS! PREPARE FOR GLORY!");
@@ -198,7 +203,8 @@ namespace Cadastro_Series
 			Console.WriteLine("BEM VINDO AO SPARTANS SERIES");
 			Console.WriteLine("DIGA SUAS INTENÇÕES:");
 
-			Console.WriteLine("1- LISTAR SÉRIES");
+			Console.WriteLine("1- LISTAR TODAS AS SÉRIES");
+            Console.WriteLine("2- SÉRIES MAIS VOTADAS");
 			Console.WriteLine("2- INSERIR NOVA SÉRIE");
 			Console.WriteLine("3- ATUALIZAR SÉRIE");
 			Console.WriteLine("4- EXCLUIR SÉRIE");

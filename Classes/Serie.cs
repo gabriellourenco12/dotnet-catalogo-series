@@ -8,7 +8,7 @@ namespace Cadastro_Series
         private string Titulo {get; set;}
         private string Descricao {get; set;}
         private int Ano {get; set;}
-        private double Nota {get; set;}
+        public double Nota {get; set;}
         private bool Excluido {get; set;}
 
         //Métodos
