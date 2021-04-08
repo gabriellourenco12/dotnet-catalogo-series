@@ -81,19 +81,21 @@ namespace Cadastro_Series
             Console.WriteLine("--- EXCLUIR SÉRIE ---");
             Console.WriteLine();
 			int indiceSerie = PegarId();
+            var serie = repositorio.RetornaPorId(indiceSerie);
+            Console.WriteLine("#ID {0}: - {1}", serie.retornaId(), serie.retornaTitulo());
             Console.WriteLine("VOCÊ REALMENTE DESEJA FAZER ESSA SÉRIE MARCHAR NAS TERMÓPILAS? S OU N");
             var resposta = Console.ReadLine();
 
             if (resposta.ToUpper() == "S" || resposta.ToUpper() == "SIM")
             {
                 repositorio.Exclui(indiceSerie);
-                Console.WriteLine("SÉRIE DERROTADA EM BATALHA");
+                Console.WriteLine("{0} DERROTADA EM BATALHA",serie.retornaTitulo());
                 Console.WriteLine("PRESS F TO PAY RESPECTS");
                 Console.ReadKey();
             }
             else
             {
-                Console.WriteLine("SÉRIE NÃO EXCLUÍDA");
+                Console.WriteLine("{0} RETORNOU MAIS FORTE",serie.retornaTitulo());
                 Console.ReadKey();
             }  
         }
